@@ -1,0 +1,10 @@
+numpy>=1.24,<2.3
+scipy>=1.10,<1.16
+matplotlib>=3.7,<3.11
+pandas>=2.0,<2.4
+scikit-fem>=9.0,<11
+pytest>=7.4
+nbformat>=5.9
+nbconvert>=7.8
+nbclient>=0.8
+ipykernel>=6.25

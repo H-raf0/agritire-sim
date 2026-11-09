@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agritire"
+version = "0.1.0"
+description = "Traction on soft soil (Bekker-Wong), road wear (Archard) and 2D FEM footprint of an agricultural tire"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.setuptools]
+packages = ["agritire"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
