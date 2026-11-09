@@ -28,9 +28,15 @@ Cinématique sur le méplat             dj/dξ = s   (ξ = abscisse depuis l'ava
 Poussée brute                         H  = Rb∫arc τ cosθ dθ + b∫méplat τ dξ
 Résistance de compaction              Rc = Rb∫arc σ sinθ dθ = b k z0^(n+1)/(n+1)
 Effort au crochet                     DP = H - Rc
-Couple                                T  = R²b∫arc τ dθ + (R-δ) b∫méplat τ dξ
+Couple                                T  = R²b∫arc τ dθ + R b∫méplat τ dξ  (*)
 Glissement                            s = 1 - V/(ωR)
 Rendement de traction                 η = DP·V / (T·ω) = DP R (1-s) / T
+
+(*) Le bras de levier statique de l'effort sur le méplat est R - δ. On
+utilise R, le rayon de référence du glissement (ceinture inextensible :
+vitesse circonférentielle ωR), pour que le bilan de puissance
+T ω = DP V + pertes reste cohérent (η ≤ 1). L'écart sur T est de δ/R,
+soit quelques %.
 
 Modèles complémentaires (comparaison / vérification)
 ---------------------------------------------------
@@ -219,7 +225,7 @@ def _integrate_contact(tire: Tire, soil: Soil, slip: float, z0: float,
         W += b * trapezoid(sig_f, xi)
         Ff = b * trapezoid(tau_f, xi)
         H += Ff
-        T += (R - delta) * Ff
+        T += R * Ff   # même rayon que dans s = 1 - V/(ωR) : cohérence énergétique
     else:
         xi = sig_f = tau_f = np.empty(0)
 

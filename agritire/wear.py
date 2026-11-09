@@ -65,7 +65,7 @@ class RoadContact:
     ground_pressure: float           # p_g = p_i + p_c [Pa]
     mu: float = MU_ROAD
     slip_stiffness_ratio: float = SLIP_STIFFNESS_RATIO
-    n_points: int = 2001
+    n_points: int = 4001
     pressure_shape: np.ndarray | None = None  # forme p(ξ) sur ξ ∈ [0,1], normalisée ensuite
     bristle_stiffness_override: float | None = None  # c_p imposé [N/m³]
 
@@ -118,16 +118,16 @@ def brush_state(contact: RoadContact, slip: float) -> BrushState:
     p = contact.pressure()
     cp, mu = contact.bristle_stiffness, contact.mu
     dx = x[1] - x[0]
-    u = np.zeros_like(x)
-    sliding = np.zeros(x.size, dtype=bool)
+    # Récurrence de marche : u_i = min(u_{i-1} + s dx, μ p_i / c_p), u_0 = 0.
+    # En posant g_i = μ p_i / c_p - s x_i, elle s'écrit u_i - s x_i =
+    # min(u_{i-1} - s x_{i-1}, g_i) : c'est un minimum cumulé (vectorisable).
     u_lim = mu * p / cp
-    for i in range(1, x.size):
-        trial = u[i - 1] + slip * dx         # adhérence : le poil suit la route
-        if trial > u_lim[i]:
-            u[i] = u_lim[i]                  # glissement : limité par Coulomb
-            sliding[i] = True
-        else:
-            u[i] = trial
+    g = u_lim - slip * x
+    g[0] = 0.0
+    running = np.minimum.accumulate(g)
+    u = slip * x + running
+    sliding = np.zeros(x.size, dtype=bool)
+    sliding[1:] = g[1:] < running[:-1]   # la limite de Coulomb est active
     q = cp * u
     du = np.gradient(u, dx)
     slide_ratio = np.where(sliding, np.clip(slip - du, 0.0, None), 0.0)
