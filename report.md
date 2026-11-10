@@ -181,7 +181,7 @@ La **vérification** (« résout-on correctement les équations ? ») est sépar
 | Sol argileux | 60 / 120 / 200 | souple / souple / rigide | 1,3 / 3,9 / 6,0 | 0,25 / 0,16 / 0,08 | 0,02 / 0,08 / 0,15 | 0,89 (3 %) / 0,58 (9,5 %) / 0,28 (17 %) |
 | Limon argileux | 60 / 120 / 200 | souple | 0,9 / 1,9 / 3,5 | 0,49 / 0,40 / 0,31 | 0,01 / 0,03 / 0,10 | 0,94 (2 %) / 0,84 (5,5 %) / 0,65 (11 %) |
 
-- Baisser la pression de 200 à 60 kPa divise l'enfoncement par 2 à 5 et augmente DP/W de 0,15 à 0,2.
+- Baisser la pression de 200 à 60 kPa divise l'enfoncement par 1,7 (sable sec) à 5 et augmente DP/W de 0,15 à 0,2.
   C'est le mécanisme qui justifie les pneus « basse pression » (VF/IF) et le télégonflage.
 - Le rendement maximal est atteint entre 2 et 17 % de glissement. Les valeurs de η > 0,85 sont
   **surestimées**, faute d'hystérésis interne du pneu (H5) : les ordres de grandeur mesurés sont
