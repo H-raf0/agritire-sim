@@ -190,13 +190,17 @@ def archard_wear(contact: RoadContact, fx: float, k_archard: float | None = None
 def lateral_wear_profile(load: float, width: float, ground_pressure: float,
                          fx: float, lateral_weights, mu: float = MU_ROAD,
                          slip_stiffness_ratio: float = SLIP_STIFFNESS_RATIO,
-                         n_points: int = 801):
+                         n_points: int = 20001):
     """Profil latéral d'usure à partir d'une distribution latérale de pression.
 
     La largeur est découpée en bandes ; la bande i porte une pression
     p_i(x) = w_i · p(x) (w normalisé à une moyenne de 1, p. ex. issu du FEM).
     Hypothèse de ceinture rigide : le glissement s est le même pour toutes
     les bandes ; il est ajusté pour que Σ F_x,i = F_x.
+
+    La zone glissante ne couvre que quelques % de l'empreinte aux efforts
+    usuels : une grille fine (``n_points`` ≈ 2·10⁴) est nécessaire pour que
+    l'erreur de discrétisation (≈ ±2 % avec 800 points) reste négligeable.
 
     Renvoie (s, intégrale d'Archard par unité de largeur [N/m] par bande).
     """

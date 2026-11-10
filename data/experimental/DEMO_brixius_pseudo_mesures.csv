@@ -1,0 +1,37 @@
+# DONNEES DE DEMONSTRATION - CE NE SONT PAS DES MESURES EXPERIMENTALES.
+# Generees par la correlation empirique de Brixius (1987, ASAE Paper 87-1622 ;
+# ASABE D497) pour un pneu 650/65R38 generique (b = 0,65 m, d = 1,81 m),
+# indice de cone CI = 600 kPa, ecrasement relatif delta/h = 0,2,
+# pression de gonflage ajustee a la charge (p_i = 120 kPa x W / 30 kN),
+# plus un bruit gaussien d'ecart-type 0,015 (graine 42).
+# Colonnes : load [N], inflation [Pa], slip [-], net_traction_ratio [-] (DP/W), source.
+# Pour utiliser de vraies mesures : remplacer ce fichier par un CSV de meme format
+# (p. ex. courbes numerisees avec WebPlotDigitizer, source citee en en-tete).
+load,inflation,slip,net_traction_ratio,source
+20000,80000,0.03,0.143946,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.05,0.216667,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.08,0.358736,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.11,0.453068,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.14,0.482225,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.18,0.565672,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.22,0.640841,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.27,0.680974,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+20000,80000,0.33,0.721003,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.03,0.0988135,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.05,0.21042,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.08,0.314957,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.11,0.388337,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.14,0.47074,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.18,0.528172,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.22,0.557059,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.27,0.617591,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+30000,120000,0.33,0.629096,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.03,0.0955648,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.05,0.159195,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.08,0.253109,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.11,0.321543,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.14,0.409949,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.18,0.44966,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.22,0.489016,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.27,0.527279,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
+40000,160000,0.33,0.567662,DEMO_Brixius1987_plus_bruit_NON_EXPERIMENTAL
