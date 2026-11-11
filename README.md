@@ -7,9 +7,8 @@ paramètres de sol.**
 
 ![Python](https://img.shields.io/badge/python-3.10-blue) ![tests](https://img.shields.io/badge/tests-138%20passed-brightgreen) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
 
-C'est un projet personnel d'élève ingénieur. L'objectif est de traduire la physique en équations, de
-construire un protocole de simulation et de l'analyser avec un regard critique, en confrontant le
-modèle à une référence indépendante.
+La démarche : traduire la physique en équations, construire un protocole de simulation, puis
+analyser les résultats avec un regard critique en confrontant le modèle à une référence indépendante.
 
 > ⚠️ **Honnêteté sur les données** : je n'ai pu récupérer aucune courbe expérimentale publiée sous forme
 > numérique. La partie « confrontation » utilise des **pseudo-mesures de démonstration** générées par la
